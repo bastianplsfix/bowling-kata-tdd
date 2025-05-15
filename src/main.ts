@@ -14,8 +14,9 @@ export class BowlingGame {
         // } else
         if (curr === "/") {
           const val = replacePipes.split("")[index + 1];
-          console.log(val);
-          return acc + 10;
+          const hacky = replacePipes.split("")[index - 1];
+
+          return acc + 10 + parseInt(val) - parseInt(hacky);
         } else if (curr === "-") {
           return acc;
         } else {
