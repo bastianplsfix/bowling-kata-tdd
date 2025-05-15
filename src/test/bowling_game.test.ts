@@ -5,9 +5,9 @@ test("score is 0 when 0 pins are hit", () => {
   expect(BowlingGame.score("--|--|--|--|--|--|--|--|--|--||")).toBe(0);
 });
 
-// test("score is 20 when 1 pin is hit in each round", () => {
-//   expect(BowlingGame.score("11|11|11|11|11|11|11|11|11|11||")).toBe(20);
-// });
+test("score is 20 when 1 pin is hit in each round", () => {
+  expect(BowlingGame.score("11|11|11|11|11|11|11|11|11|11||")).toBe(20);
+});
 
 // test("score is 16 with a spare throw", () => {
 //   expect(BowlingGame.score("--|5/|3-|--|--|--|--|--|--|--||")).toBe(16);

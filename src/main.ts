@@ -1,15 +1,24 @@
 export class BowlingGame {
   static score(scoreCard: string): number {
-    const frames = scoreCard.split("|");
+    const reverseScoreCard = scoreCard.split("").reverse().join("");
+    console.log(reverseScoreCard);
 
-    let acc = 0;
+    const replacePipes = reverseScoreCard.replace(/(\|)/g, "");
+    console.log(replacePipes);
 
-    frames.forEach((val) => {
-      if (val === "--") {
-        acc += 0;
-      }
-    });
+    const sumScore = replacePipes.split("").reduce((acc: number, curr: string): number => {
+      console.log(`acc: ${acc}, curr: ${curr}`);
+        if (curr === "X") {
+            return acc + 10;
+        } else if (curr === "/") {
+            return acc + 10;
+        } else if (curr === "-") {
+            return acc;
+        } else {
+            return acc + parseInt(curr);
+        }
+    })
 
-    return acc;
+    return parseInt(sumScore);
   }
 }
