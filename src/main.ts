@@ -6,15 +6,16 @@ export class BowlingGame {
     const replacePipes = reverseScoreCard.replace(/(\|)/g, "");
     console.log(replacePipes);
 
-    const sumScore = reverseScoreCard
-      .split("|")
+    const sumScore = replacePipes
+      .split("")
       .reduce((acc: number, curr: string, index) => {
         // if (curr === "X") {
         //   return acc + 10;
         // } else
         if (curr === "/") {
           const val = replacePipes.split("")[index + 1];
-          return acc + 10 + parseInt(val);
+          console.log(val);
+          return acc + 10;
         } else if (curr === "-") {
           return acc;
         } else {
