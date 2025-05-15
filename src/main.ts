@@ -1,8 +1,15 @@
 export class BowlingGame {
   static score(scoreCard: string): number {
-    if (scoreCard === "11|11|11|11|11|11|11|11|11|11||") {
-      return 20;
-    }
-    return 0;
+    const frames = scoreCard.split("|");
+
+    let acc = 0;
+
+    frames.forEach((val) => {
+      if (val === "--") {
+        acc += 0;
+      }
+    });
+
+    return acc;
   }
 }
