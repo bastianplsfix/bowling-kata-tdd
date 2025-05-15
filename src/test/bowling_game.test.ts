@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { BowlingGame } from "../main.ts";
+import { BowlingGame } from "../main";
 
 test("score is 0 when 0 pins are hit", () => {
   expect(BowlingGame.score("--|--|--|--|--|--|--|--|--|--||")).toBe(0);
